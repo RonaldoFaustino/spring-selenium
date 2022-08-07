@@ -25,6 +25,7 @@ class SpringSeleniumApplicationTests {
 	@Test
 	void contextLoads() {
 		System.out.println(this.url);
+		this.user.printDetails();
 	}
 
 	/*Address address = new Address();
