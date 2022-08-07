@@ -30,8 +30,7 @@ class SpringSeleniumApplicationTests {
 	void contextLoads() {
 		System.out.println(this.url);
 		this.user.printDetails();
-		Faker faker = new Faker();
-		System.out.println(faker.name().firstName() +" "+ faker.name().lastName());
+
 	}
 
 	/*Address address = new Address();
