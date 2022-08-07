@@ -12,6 +12,8 @@ import java.util.List;
 class SpringSeleniumApplicationTests {
 
 	@Autowired
+	private Television tv;
+	@Autowired
 	private User user;
 
 	@Autowired
@@ -30,6 +32,7 @@ class SpringSeleniumApplicationTests {
 	void contextLoads() {
 		System.out.println(this.url);
 		this.user.printDetails();
+		this.tv.playMovie();
 
 	}
 
