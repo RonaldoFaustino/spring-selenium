@@ -13,8 +13,8 @@ class SpringSeleniumApplicationTests {
 	@Autowired
 	private User user;
 
-	@Value("${PATH}")
-	private String path;
+	@Value("${TEST_URL:http://www.google.com}")
+	private String url;
 
 	@Value("${fruits}")
 	private List<String> fruits;
@@ -24,12 +24,7 @@ class SpringSeleniumApplicationTests {
 
 	@Test
 	void contextLoads() {
-		System.out.println(this.fruits.get(0));
-		System.out.println(this.fruits.size());
-		System.out.println(this.fruits.get(0));
-		System.out.println(this.path);
-		System.out.println(this.username);
-		//System.out.println(this.path);
+		System.out.println(this.url);
 	}
 
 	/*Address address = new Address();
