@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.util.List;
 @Component
 public class SearchResult extends Base {
-    @FindBy(css = "div.rc")
+    @FindBy(css = "div.yuRUbf")
     private List<WebElement> results;
 
     public int getCount(){

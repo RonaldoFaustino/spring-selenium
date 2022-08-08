@@ -17,7 +17,7 @@ public class GooglePage extends Base {
     @Value("${aplication.url}")
     private String url;
 
-    public void toTo(){
+    public void goTo(){
         this.driver.get(url);
     }
 

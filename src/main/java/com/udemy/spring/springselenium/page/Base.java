@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 public abstract class Base {
 
@@ -21,4 +22,9 @@ public abstract class Base {
     }
 
     public abstract boolean isAt();
+
+    @PreDestroy
+    private void finish(){
+        this.driver.close();
+    }
 }
