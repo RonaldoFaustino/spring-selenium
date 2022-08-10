@@ -6,6 +6,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,8 +20,15 @@ public class WebDriverConfig {
     @Value("${default.timeout:30}")
     private int timeout;
 
+//    @Bean
+//    @ConditionalOnProperty(name = "browser", havingValue = "chrome")
+//    public WebDriver chromeDriver(){
+//        WebDriverManager.chromedriver().browserVersion("104.0.5112.79").setup();
+//        return new ChromeDriver();
+//    }
+
     @Bean
-    @ConditionalOnProperty(name = "browser", havingValue = "chrome")
+    @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
         WebDriverManager.chromedriver().browserVersion("104.0.5112.79").setup();
         return new ChromeDriver();
