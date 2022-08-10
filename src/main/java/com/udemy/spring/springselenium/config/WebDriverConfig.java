@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Primary;
 
 import java.time.Duration;
 @Lazy
@@ -25,6 +26,7 @@ public class WebDriverConfig {
     }
 
     @Bean
+    @Primary
     public WebDriver firefoxDriver(){
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
