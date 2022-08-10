@@ -3,6 +3,7 @@ package com.udemy.spring.springselenium.config;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -21,6 +22,12 @@ public class WebDriverConfig {
     public WebDriver chromeDriver(){
         WebDriverManager.chromedriver().browserVersion("104.0.5112.79").setup();
         return new ChromeDriver();
+    }
+
+    @Bean
+    public WebDriver firefoxDriver(){
+        WebDriverManager.firefoxdriver().setup();
+        return new FirefoxDriver();
     }
 
     @Bean
