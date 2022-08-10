@@ -6,6 +6,7 @@ import com.udemy.spring.springselenium.util.ScreenShotUtil;
 import org.junit.Assert;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 
 import java.io.IOException;
 
@@ -14,6 +15,7 @@ public class GoogleTest extends SpringBaseJunitTest {
     @Autowired
     private GooglePage googlePage;
 
+    @Lazy
     @Autowired
     private ScreenShotUtil screenShotUtil;
 
