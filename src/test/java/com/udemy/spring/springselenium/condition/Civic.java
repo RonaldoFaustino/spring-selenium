@@ -1,10 +1,11 @@
 package com.udemy.spring.springselenium.condition;
 
-import org.springframework.boot.autoconfigure.condition.ConditionalOnExpression;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConditionalOnExpression("${car.speed} < 70")
+//@ConditionalOnExpression("${car.speed} < 70")
+@Qualifier("Civic")
 public class Civic implements Car{
 
     @Override
