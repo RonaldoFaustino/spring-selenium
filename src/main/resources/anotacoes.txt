@@ -1,0 +1,2 @@
+Execução por linha de comando:
+mvn clean test -Dspring.profiles.active=qa Dbrowser=firefox
