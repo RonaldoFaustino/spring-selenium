@@ -15,7 +15,7 @@ import java.io.IOException;
 
 @SpringBootTest
 @RunWith(SpringRunner.class )
-public class GoogleTest extends SpringBaseJunitTest {
+public class Google2Test extends SpringBaseJunitTest {
 
     @Autowired
     private GooglePage googlePage;
@@ -31,11 +31,9 @@ public class GoogleTest extends SpringBaseJunitTest {
 
         //Uninterruptibles.sleepUninterruptibly(3, TimeUnit.SECONDS);
 
-        this.googlePage.getSearchComponent().search("environment ");
-        //this.googlePage.getSearchComponent().search("Spring Boot");
+        this.googlePage.getSearchComponent().search("Selenium");
         Assert.assertTrue(this.googlePage.getSearchResult().isAt());
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotUtil.takeScreenShot("google");
-        System.out.println("Final Test Google Test");
     }
 }
