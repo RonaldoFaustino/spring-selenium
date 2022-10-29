@@ -10,7 +10,7 @@ import java.util.List;
 @PageFragment
 public class SearchComponent extends Base {
 
-    @FindBy(name = "q")
+    @FindBy(xpath = "//input[@class=\"gLFyf gsfi\"]")
     private WebElement searchBox;
 
     @FindBy(name = "btnK")

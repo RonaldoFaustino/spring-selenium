@@ -15,8 +15,8 @@ import org.springframework.context.annotation.Profile;
 import java.net.URL;
 import java.time.Duration;
 
-@LazyConfiguration
 @Profile("remote")
+@LazyConfiguration
 public class RemoteWebDriverConfig {
 
     @Value("${selenium.grid.url}")

@@ -21,6 +21,10 @@ public class GooglePage extends Base {
         this.driver.get(url);
     }
 
+    public void close(){
+        this.driver.close();
+    }
+
     public SearchComponent getSearchComponent(){
         return searchComponent;
     };

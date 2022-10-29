@@ -37,5 +37,6 @@ public class GoogleTest extends SpringBaseJunitTest {
         Assert.assertTrue(this.googlePage.getSearchResult().getCount() > 2);
         this.screenShotUtil.takeScreenShot("google");
         System.out.println("Final Test Google Test");
+        this.googlePage.close();
     }
 }
