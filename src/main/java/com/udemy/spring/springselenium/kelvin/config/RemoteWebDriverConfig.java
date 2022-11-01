@@ -1,6 +1,7 @@
-package com.udemy.spring.springselenium.config;
+package com.udemy.spring.springselenium.kelvin.config;
 
-import com.udemy.spring.springselenium.annotation.LazyConfiguration;
+import com.udemy.spring.springselenium.kelvin.annotation.annotation.LazyConfiguration;
+import com.udemy.spring.springselenium.kelvin.annotation.annotation.ThreadScopeBean;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
@@ -25,17 +26,16 @@ public class RemoteWebDriverConfig {
     @Value("${default.timeout:30}")
     private int timeout;
 
-    @Bean
+   @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver remoteFirefoxDriver(){
 //        FirefoxProfile profile = new FirefoxProfile();
 //        FirefoxOptions options = new FirefoxOptions();
 //        options.setProfile(profile);
-
         return new RemoteWebDriver(this.url, new FirefoxOptions());
     }
 
-    @Bean
+    @ThreadScopeBean
     @ConditionalOnMissingBean()
     public WebDriver remoteChromeDriver(){
 

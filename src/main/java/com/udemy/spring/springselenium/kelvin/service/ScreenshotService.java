@@ -1,4 +1,4 @@
-package com.udemy.spring.springselenium.util;
+package com.udemy.spring.springselenium.kelvin.service;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
@@ -6,7 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.util.FileCopyUtils;
 
 import javax.annotation.PostConstruct;
@@ -17,8 +17,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Lazy
-@Component
-public class ScreenShotUtil {
+@Service
+public class ScreenshotService {
 
     @Autowired
     private TakesScreenshot driver;

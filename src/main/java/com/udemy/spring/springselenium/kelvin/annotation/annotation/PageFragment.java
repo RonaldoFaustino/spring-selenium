@@ -1,4 +1,5 @@
-package com.udemy.spring.springselenium.annotation;
+package com.udemy.spring.springselenium.kelvin.annotation.annotation;
+
 
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Scope;
@@ -12,5 +13,5 @@ import java.lang.annotation.*;
 @Documented
 @Target({ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Page {
+public @interface PageFragment {
 }
