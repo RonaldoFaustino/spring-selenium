@@ -5,7 +5,9 @@ import com.udemy.spring.springselenium.kelvin.annotation.annotation.ThreadScopeB
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
@@ -26,8 +28,33 @@ public class WebDriverConfig {
     //@Scope("prototype")
     @ConditionalOnMissingBean
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().browserVersion("107").setup();
-        return new ChromeDriver();
+        WebDriverManager.chromedriver().browserVersion("110").setup();
+        WebDriverManager.chromedriver().setup();
+
+        ChromeOptions options = new ChromeOptions();
+
+//options.addArguments("--headless");
+
+        options.addArguments("--disable-notifications");
+
+        options.addArguments("--disable-gpu");
+
+        options.addArguments("--disable-extensions");
+
+        options.addArguments("--no-sandbox");
+
+        options.addArguments("--disable-dev-shm-usage");
+
+        options.addArguments("--remote-allow-origins=*");  // this i added  this and it worked, Thanks a ton  xinchao zhang !!
+
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+
+        capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+
+        options.merge(capabilities);
+
+        //new ChromeDriver(options);
+        return new ChromeDriver(options);
     }
 
 //        @Bean
